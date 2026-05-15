@@ -45,9 +45,9 @@
 
 .navbar {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
-  padding: 30px 70px;
+  padding: 30px 40px;
 }
 
 .navbar-menu {
@@ -59,11 +59,8 @@
 
 a {
   text-decoration: none;
-  font-family: "Great Vibes", cursive;
-  font-weight: 400;
-  font-style: normal;
   color: #3d2418;
-  font-size: 27px;
+  font-size: 20px;
 }
 
 a:hover{
