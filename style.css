@@ -746,6 +746,389 @@ img {
   }
 }
 
+/* Testimonios */
+.testimonials {
+  padding: 80px 20px;
+  background: var(--soft-rose);
+}
+
+.testimonials-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.testimonials-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.testimonials-title {
+  font-family: "Allura", cursive;
+  font-size: 50px;
+  color: var(--primary-pink);
+}
+
+.testimonials-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--dark-brown);
+  margin-top: 10px;
+}
+
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+}
+
+.testimonial-card {
+  background: white;
+  border-radius: 20px;
+  padding: 30px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(246, 91, 138, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+}
+
+.testimonial-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(246, 91, 138, 0.2);
+}
+
+.testimonial-card.featured {
+  background: linear-gradient(135deg, var(--primary-pink), var(--button-pink));
+  color: white;
+}
+
+.testimonial-card.featured .testimonial-text {
+  color: white;
+}
+
+.testimonial-card.featured .testimonial-author h4,
+.testimonial-card.featured .testimonial-author span {
+  color: white;
+}
+
+.testimonial-badge {
+  position: absolute;
+  top: -12px;
+  right: 20px;
+  background: gold;
+  color: #333;
+  font-family: "Poppins", sans-serif;
+  font-size: 11px;
+  font-weight: 600;
+  padding: 5px 12px;
+  border-radius: 20px;
+}
+
+.testimonial-image {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 15px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid var(--primary-pink);
+}
+
+.testimonial-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.testimonial-stars {
+  font-size: 20px;
+  margin-bottom: 15px;
+}
+
+.testimonial-text {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.7;
+  font-style: italic;
+  margin-bottom: 20px;
+}
+
+.testimonial-author h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--dark-brown);
+  margin-bottom: 5px;
+}
+
+.testimonial-author span {
+  font-family: "Poppins", sans-serif;
+  font-size: 13px;
+  color: #888;
+}
+
+.testimonial-card.featured .testimonial-stars {
+  color: gold;
+}
+
+/* Galería */
+.gallery {
+  padding: 80px 20px;
+  background: var(--cream-white);
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-header {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.gallery-title {
+  font-family: "Allura", cursive;
+  font-size: 50px;
+  color: var(--primary-pink);
+}
+
+.gallery-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--dark-brown);
+  margin-top: 10px;
+}
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+}
+
+.gallery-item {
+  position: relative;
+  border-radius: 15px;
+  overflow: hidden;
+  cursor: pointer;
+  aspect-ratio: 3/2;
+}
+
+.gallery-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.1);
+}
+
+.gallery-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(transparent, rgba(246, 91, 138, 0.9));
+  padding: 20px;
+  transform: translateY(100%);
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover .gallery-overlay {
+  transform: translateY(0);
+}
+
+.gallery-overlay span {
+  color: white;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  font-weight: 500;
+}
+
+/* Contacto */
+.contact {
+  padding: 80px 20px;
+  background: linear-gradient(180deg, #fff7f9 0%, #fdeeef 100%);
+}
+
+.contact-container {
+  max-width: 1100px;
+  margin: 0 auto;
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-title {
+  font-family: "Allura", cursive;
+  font-size: 50px;
+  color: var(--primary-pink);
+  margin-bottom: 10px;
+}
+
+.contact-subtitle {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--dark-brown);
+  margin-bottom: 30px;
+}
+
+.contact-options {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.contact-option {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 20px;
+  background: #fff;
+  border-radius: 15px;
+  text-decoration: none;
+  box-shadow: 0 5px 20px rgba(246, 91, 138, 0.1);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-option:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 10px 30px rgba(246, 91, 138, 0.2);
+}
+
+.contact-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.contact-option.whatsapp .contact-icon svg path {
+  fill: #25D366;
+  transition: fill 0.3s ease;
+}
+
+.contact-option.whatsapp:hover .contact-icon svg path {
+  fill: #fff;
+}
+
+.contact-option.phone {
+  color: var(--primary-pink);
+}
+
+.contact-option.phone .contact-icon svg {
+  color: var(--primary-pink);
+  transition: color 0.3s ease;
+}
+
+.contact-option.phone:hover .contact-icon svg {
+  color: #fff;
+}
+
+.contact-option.email .contact-icon svg path {
+  transition: fill 0.3s ease;
+}
+
+.contact-option.email:hover .contact-icon svg path {
+  fill: #fff;
+}
+
+.contact-text h4 {
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  color: var(--dark-brown);
+  margin-bottom: 3px;
+}
+
+.contact-text p {
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  color: #888;
+}
+
+.contact-option.whatsapp:hover {
+  background: #25D366;
+}
+
+.contact-option.whatsapp:hover .contact-text p,
+.contact-option.whatsapp:hover .contact-text h4 {
+  color: #fff;
+}
+
+.contact-option.phone:hover {
+  background: var(--primary-pink);
+}
+
+.contact-option.phone:hover .contact-text p,
+.contact-option.phone:hover .contact-text h4 {
+  color: #fff;
+}
+
+.contact-option.email:hover {
+  background: #EA4335;
+}
+
+.contact-option.email:hover .contact-text p,
+.contact-option.email:hover .contact-text h4 {
+  color: #fff;
+}
+
+.contact-form-wrapper {
+  flex: 1;
+  background: #fff;
+  padding: 30px;
+  border-radius: 20px;
+  box-shadow: 0 10px 40px rgba(246, 91, 138, 0.15);
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.form-input,
+.form-textarea {
+  padding: 15px 20px;
+  border: 2px solid #f0e0e0;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 14px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-input:focus,
+.form-textarea:focus {
+  outline: none;
+  border-color: var(--primary-pink);
+  box-shadow: 0 0 0 4px rgba(246, 91, 138, 0.1);
+}
+
+.form-textarea {
+  resize: none;
+}
+
+.form-button {
+  padding: 15px 30px;
+  background: var(--primary-pink);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  font-family: "Poppins", sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.3s ease;
+}
+
+.form-button:hover {
+  background: var(--button-pink);
+  transform: translateY(-2px);
+}
+
 /* Footer */
 .footer {
   background: linear-gradient(180deg, #fff7f9 0%, #fdeeef 100%);
@@ -1542,5 +1925,44 @@ html {
   .footer-contact h4,
   .footer-social h4 {
     font-size: 16px;
+  }
+  
+  /* Testimonios responsive */
+  .testimonials-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  
+  .testimonial-card.featured {
+    order: -1;
+  }
+  
+  /* Galería responsive */
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .gallery-item {
+    display: block !important;
+  }
+  
+  /* Contacto responsive */
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .contact-info,
+  .contact-form-wrapper {
+    width: 100%;
+  }
+  
+  .contact-options {
+    flex-direction: row;
+    flex-wrap: wrap;
+  }
+  
+  .contact-option {
+    flex: 1;
+    min-width: 140px;
   }
 }
