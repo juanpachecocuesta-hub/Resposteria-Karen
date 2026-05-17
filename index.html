@@ -23,6 +23,7 @@
           <li><a href="#productos">Productos</a></li>
           <li><a href="servicios.html" target="_blank">Servicios</a></li>
           <li><a href="#galeria">Galería</a></li>
+          <li><a href="blog.html" target="_blank">Blog</a></li>
           <li><a href="#contacto">Contacto</a></li>
         </ul>
 
@@ -31,6 +32,9 @@
     </header>
 
     <section class="hero" id="inicio">
+      <!-- Partículas flotantes -->
+      <div class="particles" id="particles"></div>
+      
       <div class="hero-container">
         <div class="hero-content">
           <div class="hero-heading">
@@ -52,18 +56,39 @@
           </div>
 
           <div class="hero-buttons">
-            <button class="btn-primary">Ver catálogo</button>
+            <button class="btn-primary" onclick="document.querySelector('#personalizadas').scrollIntoView({behavior: 'smooth'})">Ver catálogo</button>
 
-            <button class="btn-secondary">Pedir ahora</button>
+            <button class="btn-secondary" onclick="document.querySelector('#contacto').scrollIntoView({behavior: 'smooth'})">Pedir ahora</button>
           </div>
         </div>
 
-        <div class="hero-image-wrapper">
-          <img
-            class="hero-image"
-            src="img/9ef239ae-bb5e-49d6-8f21-3a6ba09130eb.jpg"
-            alt=""
-          />
+        <div class="hero-slider">
+          <div class="slider-wrapper">
+            <div class="slider-slide active">
+              <img src="img/9ef239ae-bb5e-49d6-8f21-3a6ba09130eb.jpg" alt="Torta elegante">
+            </div>
+            <div class="slider-slide">
+              <img src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=800&h=800&fit=crop" alt="Torta chocolate">
+            </div>
+            <div class="slider-slide">
+              <img src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=800&h=800&fit=crop" alt="Cupcakes">
+            </div>
+            <div class="slider-slide">
+              <img src="https://images.unsplash.com/photo-1535254973040-607b474cb50d?w=800&h=800&fit=crop" alt="Torta rosa">
+            </div>
+          </div>
+          
+          <div class="slider-nav">
+            <button class="slider-btn prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="slider-btn next" onclick="changeSlide(1)">&#10095;</button>
+          </div>
+          
+          <div class="slider-dots">
+            <span class="dot active" onclick="goToSlide(0)"></span>
+            <span class="dot" onclick="goToSlide(1)"></span>
+            <span class="dot" onclick="goToSlide(2)"></span>
+            <span class="dot" onclick="goToSlide(3)"></span>
+          </div>
         </div>
       </div>
     </section>

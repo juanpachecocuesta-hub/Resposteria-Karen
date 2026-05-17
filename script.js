@@ -197,3 +197,81 @@ window.addEventListener('resize', () => {
 
 
 console.log('✅ Repostería Karen - JavaScript cargado correctamente');
+
+
+// ============================================
+// 8. SLIDER DEL HERO
+// ============================================
+// Carrusel automático de imágenes en el hero
+
+let currentSlide = 0;
+const slides = document.querySelectorAll('.slider-slide');
+const dots = document.querySelectorAll('.dot');
+const totalSlides = slides.length;
+
+function showSlide(index) {
+    // Remover clase active de todos los slides y dots
+    slides.forEach(slide => slide.classList.remove('active'));
+    dots.forEach(dot => dot.classList.remove('active'));
+    
+    // Asegurar que el índice esté en rango
+    if (index >= totalSlides) currentSlide = 0;
+    else if (index < 0) currentSlide = totalSlides - 1;
+    else currentSlide = index;
+    
+    // Agregar clase active al slide y dot actual
+    slides[currentSlide].classList.add('active');
+    dots[currentSlide].classList.add('active');
+}
+
+function changeSlide(direction) {
+    showSlide(currentSlide + direction);
+}
+
+function goToSlide(index) {
+    showSlide(index);
+}
+
+// Auto cambio cada 4 segundos
+if (slides.length > 0) {
+    setInterval(() => {
+        showSlide(currentSlide + 1);
+    }, 4000);
+}
+
+
+// ============================================
+// 9. PARTÍCULAS FLOTANTES (CONFETI/BURBUJAS)
+// ============================================
+// Crea partículas que flotan suavemente en el hero
+
+const particlesContainer = document.getElementById('particles');
+
+if (particlesContainer) {
+    const particleColors = ['#f65b8a', '#ff7fa8', '#f9c8d3', '#ffe3ea', '#ffd6e5'];
+    const particleCount = 20;
+    
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        // Tamaño aleatorio entre 5px y 15px
+        const size = Math.random() * 10 + 5;
+        particle.style.width = size + 'px';
+        particle.style.height = size + 'px';
+        
+        // Color aleatorio
+        particle.style.background = particleColors[Math.floor(Math.random() * particleColors.length)];
+        
+        // Posición horizontal aleatoria
+        particle.style.left = Math.random() * 100 + '%';
+        
+        // Animación aleatoria
+        const duration = Math.random() * 10 + 10;
+        const delay = Math.random() * 10;
+        particle.style.animationDuration = duration + 's';
+        particle.style.animationDelay = delay + 's';
+        
+        particlesContainer.appendChild(particle);
+    }
+}
