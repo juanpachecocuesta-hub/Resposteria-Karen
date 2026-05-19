@@ -1633,8 +1633,22 @@ img {
 
 /* HOVER */
 
+/* Animación de shake (sacudida) al pasar el mouse */
+@keyframes shake {
+  0%, 100% { transform: translateY(-7px) scale(1.08) rotate(0deg); }
+  10% { transform: translateY(-7px) scale(1.08) rotate(-5deg); }
+  20% { transform: translateY(-7px) scale(1.08) rotate(5deg); }
+  30% { transform: translateY(-7px) scale(1.08) rotate(-5deg); }
+  40% { transform: translateY(-7px) scale(1.08) rotate(5deg); }
+  50% { transform: translateY(-7px) scale(1.08) rotate(-5deg); }
+  60% { transform: translateY(-7px) scale(1.08) rotate(5deg); }
+  70% { transform: translateY(-7px) scale(1.08) rotate(-3deg); }
+  80% { transform: translateY(-7px) scale(1.08) rotate(3deg); }
+  90% { transform: translateY(-7px) scale(1.08) rotate(-2deg); }
+}
+
 .social-link:hover {
-  transform: translateY(-7px) scale(1.08);
+  animation: shake 0.8s ease-in-out;
 }
 
 /* ICONO */
