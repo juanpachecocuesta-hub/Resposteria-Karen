@@ -1,3 +1,4 @@
+/* Google Fonts con display=swap para evitar flash de texto invisible */
 @import url("https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap");
 
 @import url("https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap");
@@ -40,6 +41,19 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+}
+
+/* Clase para labels ocultos visualmente pero accesibles para lectores de pantalla */
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 .header {
@@ -379,7 +393,7 @@ img {
   overflow: hidden;
 }
 
-.promo-card::before {
+.promo-card.front::before {
   content: "";
   position: absolute;
   top: 0;
@@ -495,6 +509,169 @@ img {
 .promo-image {
   font-size: 60px;
   flex-shrink: 0;
+}
+
+/* ============================================
+   TARJETAS PROMO CON ANIMACIÓN DE VOLTEO SUAVE
+   ============================================ */
+
+.promo-card-container {
+  perspective: 1500px;
+  width: 100%;
+}
+
+.promo-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 200px;
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.promo-card-container:hover .promo-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Estilos del frente (front) */
+.promo-card.front {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+}
+
+/* Estilos del reverso (back) */
+.promo-card.back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  -webkit-backface-visibility: hidden;
+  transform: rotateY(180deg);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 30px;
+  text-align: center;
+  overflow: hidden;
+}
+
+/* Fondo decorativo con patrones suaves */
+.promo-card.back::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-image: 
+    radial-gradient(circle at 20% 80%, rgba(255,255,255,0.15) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(255,255,255,0.1) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+/* Diseño del reverso - Tarjeta 1 (descuento) - Rosa elegante */
+.promo-card-container:first-child .promo-card.back {
+  background: linear-gradient(145deg, #f65b8a 0%, #e84e7a 40%, #ff7fa8 70%, #ffcce0 100%);
+  box-shadow: 0 20px 50px rgba(246, 91, 138, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.2);
+}
+
+.promo-card-container:first-child .back-decoration {
+  font-size: 70px;
+  margin-bottom: 10px;
+  animation: float-gentle 3s ease-in-out infinite;
+}
+
+/* Diseño del reverso - Tarjeta 2 (tortas) - Rosa con estrellitas */
+.promo-card-container:last-child .promo-card.back {
+  background: linear-gradient(145deg, #ff9eb5 0%, #f65b8a 30%, #e84e7a 60%, #ffcce0 100%);
+  box-shadow: 0 20px 50px rgba(246, 91, 138, 0.35);
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Estrellitas iluminantes de fondo */
+.promo-card-container:last-child .promo-card.back::before {
+  background-image: 
+    radial-gradient(circle at 15% 25%, rgba(255, 255, 255, 0.8) 0%, transparent 3%),
+    radial-gradient(circle at 85% 15%, rgba(255, 255, 255, 0.6) 0%, transparent 2%),
+    radial-gradient(circle at 70% 80%, rgba(255, 255, 255, 0.7) 0%, transparent 2.5%),
+    radial-gradient(circle at 20% 70%, rgba(255, 255, 255, 0.5) 0%, transparent 2%),
+    radial-gradient(circle at 40% 40%, rgba(255, 255, 255, 0.6) 0%, transparent 2%),
+    radial-gradient(circle at 90% 50%, rgba(255, 255, 255, 0.4) 0%, transparent 1.5%),
+    radial-gradient(circle at 10% 90%, rgba(255, 255, 255, 0.5) 0%, transparent 2%);
+  animation: twinkle 2s ease-in-out infinite alternate;
+}
+
+@keyframes twinkle {
+  0% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.promo-card-container:last-child .back-decoration {
+  font-size: 70px;
+  margin-bottom: 10px;
+  animation: float-gentle 3s ease-in-out infinite;
+  animation-delay: 0.5s;
+}
+
+/* Contenido del reverso */
+.back-content h4 {
+  font-family: 'Allura', cursive;
+  font-size: 36px;
+  color: white;
+  margin-bottom: 8px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.back-content p {
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  color: rgba(255, 255, 255, 0.95);
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.back-sparkles {
+  display: flex;
+  gap: 8px;
+  justify-content: center;
+  font-size: 20px;
+}
+
+/* Animación suave de flotación */
+@keyframes float-gentle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+/* Decoración de puntos alrededor del borde */
+.promo-card.back::after {
+  content: '✦ ✦ ✦';
+  position: absolute;
+  bottom: 15px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 12px;
+  letter-spacing: 8px;
+}
+
+/* Cursor pointer */
+.promo-card-container {
+  cursor: pointer;
 }
 
 /* Responsive promo */
@@ -1017,6 +1194,78 @@ img {
   color: gold;
 }
 
+/* Etiqueta de compra verificada */
+.testimonial-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #28a745;
+  background: #e8f5e9;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-verified i {
+  font-size: 12px;
+}
+
+/* ============================================
+   CARRUSEL DE TESTIMONIOS AUTOMÁTICO
+   ============================================ */
+
+.testimonials-carousel {
+  overflow: hidden;
+  width: 100%;
+}
+
+.carousel-track {
+  display: flex;
+  gap: 25px;
+  width: max-content;
+  animation: scroll-left 20s linear infinite;
+}
+
+/* Pausar animación al pasar el mouse */
+.testimonials-carousel:hover .carousel-track {
+  animation-play-state: paused;
+}
+
+/* Animación de movimiento suave hacia la izquierda */
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(calc(-50% - 12.5px));
+  }
+}
+
+/* Velocidad más lenta - 40 segundos por ciclo */
+.carousel-track {
+  animation: scroll-left 40s linear infinite;
+}
+
+/* Estilo de cada card en el carrusel */
+.carousel-track .testimonial-card {
+  width: 350px;
+  flex-shrink: 0;
+  background: white;
+  border-radius: 20px;
+  padding: 25px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(246, 91, 138, 0.1);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .carousel-track .testimonial-card {
+    width: 280px;
+  }
+}
+
 /* Galería */
 .gallery {
   padding: 80px 20px;
@@ -1456,8 +1705,22 @@ img {
 
 /* HOVER */
 
+/* Animación de shake (sacudida) al pasar el mouse */
+@keyframes shake {
+  0%, 100% { transform: translateY(-7px) scale(1.08) rotate(0deg); }
+  10% { transform: translateY(-7px) scale(1.08) rotate(-5deg); }
+  20% { transform: translateY(-7px) scale(1.08) rotate(5deg); }
+  30% { transform: translateY(-7px) scale(1.08) rotate(-5deg); }
+  40% { transform: translateY(-7px) scale(1.08) rotate(5deg); }
+  50% { transform: translateY(-7px) scale(1.08) rotate(-5deg); }
+  60% { transform: translateY(-7px) scale(1.08) rotate(5deg); }
+  70% { transform: translateY(-7px) scale(1.08) rotate(-3deg); }
+  80% { transform: translateY(-7px) scale(1.08) rotate(3deg); }
+  90% { transform: translateY(-7px) scale(1.08) rotate(-2deg); }
+}
+
 .social-link:hover {
-  transform: translateY(-7px) scale(1.08);
+  animation: shake 0.8s ease-in-out;
 }
 
 /* ICONO */
@@ -1506,8 +1769,31 @@ img {
 }
 
 /* =========================
+   ESTADOS DE FOCUS (Accesibilidad)
+  outline visible cuando el usuario navega con teclado
+ ========================= */
+
+/* Focus general para todos los elementos interactivos */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+textarea:focus-visible {
+  outline: 3px solid var(--primary-pink);
+  outline-offset: 2px;
+}
+
+/* Mejorar contraste de texto en elementos secundarios */
+.testimonial-author span {
+  color: #666;
+}
+
+.contact-text p {
+  color: #666;
+}
+
+/* =========================
    RESPONSIVE
-========================= */
+ ========================= */
 
 @media (max-width: 992px) {
   .footer-container {
@@ -2575,5 +2861,300 @@ html {
 
   .promo-description {
     font-size: 16px;
+  }
+}
+
+/* ============================================
+   CHAT FLOTANTE INTELIGENTE
+   ============================================ */
+
+/* Botón flotante del chat */
+.chat-toggle {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f65b8a, #ff8fb1);
+  border: none;
+  box-shadow: 0 10px 30px rgba(246, 91, 138, 0.4);
+  cursor: pointer;
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  color: white;
+  font-size: 26px;
+}
+
+.chat-toggle:hover {
+  transform: scale(1.1);
+  box-shadow: 0 15px 40px rgba(246, 91, 138, 0.5);
+}
+
+.chat-toggle.hidden {
+  display: none;
+}
+
+/* Notificación del chat */
+.chat-notification {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background: #ff4757;
+  color: white;
+  font-size: 12px;
+  font-weight: bold;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse-notification 2s infinite;
+}
+
+@keyframes pulse-notification {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+}
+
+/* Ventana del chat */
+.chat-window {
+  position: fixed;
+  bottom: 100px;
+  right: 30px;
+  width: 380px;
+  max-width: calc(100vw - 60px);
+  height: 500px;
+  max-height: calc(100vh - 160px);
+  background: white;
+  border-radius: 20px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+  z-index: 9998;
+  display: none;
+  flex-direction: column;
+  overflow: hidden;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chat-window.active {
+  display: flex;
+  animation: slideUp 0.4s ease;
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Encabezado del chat */
+.chat-header {
+  background: linear-gradient(135deg, #f65b8a, #ff8fb1);
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: white;
+}
+
+.chat-header-info {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.chat-avatar {
+  font-size: 32px;
+  background: rgba(255, 255, 255, 0.2);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-header h4 {
+  font-size: 16px;
+  font-weight: 600;
+  margin: 0;
+}
+
+.chat-status {
+  font-size: 12px;
+  opacity: 0.9;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.chat-status::before {
+  content: '';
+  width: 8px;
+  height: 8px;
+  background: #2ed573;
+  border-radius: 50%;
+}
+
+.chat-close {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  padding: 5px;
+  opacity: 0.8;
+  transition: opacity 0.3s;
+}
+
+.chat-close:hover {
+  opacity: 1;
+}
+
+/* Mensajes del chat */
+.chat-messages {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  background: #fff5f8;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.chat-message {
+  display: flex;
+  max-width: 85%;
+}
+
+.chat-message.bot {
+  align-self: flex-start;
+}
+
+.chat-message.user {
+  align-self: flex-end;
+}
+
+.message-content {
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+.chat-message.bot .message-content {
+  background: white;
+  color: #333;
+  border-bottom-left-radius: 4px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.chat-message.user .message-content {
+  background: linear-gradient(135deg, #f65b8a, #ff8fb1);
+  color: white;
+  border-bottom-right-radius: 4px;
+}
+
+/* Opciones rápidas */
+.chat-options {
+  padding: 12px 15px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.chat-option {
+  background: #fff5f8;
+  border: 1px solid #fce4ec;
+  padding: 8px 12px;
+  border-radius: 20px;
+  font-size: 12px;
+  color: #f65b8a;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'Poppins', sans-serif;
+}
+
+.chat-option:hover {
+  background: #f65b8a;
+  color: white;
+  transform: scale(1.05);
+}
+
+/* Área de input */
+.chat-input-area {
+  padding: 15px;
+  background: white;
+  border-top: 1px solid #f0f0f0;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+#chat-input {
+  flex: 1;
+  padding: 12px 16px;
+  border: 2px solid #fce4ec;
+  border-radius: 25px;
+  font-size: 14px;
+  font-family: 'Poppins', sans-serif;
+  outline: none;
+  transition: border-color 0.3s;
+}
+
+#chat-input:focus {
+  border-color: #f65b8a;
+}
+
+.chat-send {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f65b8a, #ff8fb1);
+  border: none;
+  color: white;
+  font-size: 18px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.chat-send:hover {
+  transform: scale(1.1);
+  box-shadow: 0 5px 20px rgba(246, 91, 138, 0.3);
+}
+
+/* Responsive del chat */
+@media (max-width: 480px) {
+  .chat-toggle {
+    bottom: 20px;
+    right: 20px;
+    width: 55px;
+    height: 55px;
+    font-size: 22px;
+  }
+
+  .chat-window {
+    bottom: 85px;
+    right: 10px;
+    left: 10px;
+    width: auto;
+  }
+
+  .chat-options {
+    justify-content: center;
   }
 }

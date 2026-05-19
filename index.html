@@ -3,8 +3,17 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Repostería Karen</title>
+    
+    <!-- SEO: Descripción breve de la página para motores de búsqueda -->
+    <meta name="description" content="Repostería artesanal en Colombia. Tortas, cupcakes y postres personalizados para bodas, XV años y eventos especiales. Hechos con amor." />
+    
+    <!-- SEO: Indica a los motores de búsqueda cuál es la página principal -->
+    <link rel="canonical" href="https://dulceamorkaren.com/" />
+    
+    <title>Repostería Karen - Tortas y Cupcakes Artesanales</title>
     <link rel="stylesheet" href="style.css" />
+    <!-- Bootstrap Icons para iconos del footer -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
     <script src="script.js" defer></script>
   </head>
   <body>
@@ -127,26 +136,52 @@
 
     <section class="promo-banner">
       <div class="promo-container">
-        <div class="promo-card">
-          <div class="promo-badge">🔥 OFERTA</div>
-          <div class="promo-content">
-            <h3 class="promo-title">20% DESCUENTO</h3>
-            <p class="promo-subtitle">En tu primer pedido</p>
-            <p class="promo-code">Código: DULCEAMOR20</p>
-            <a href="#contacto" class="promo-button">Pedir ahora</a>
+        <!-- Tarjeta 1: 20% Descuento -->
+        <div class="promo-card-container">
+          <div class="promo-card-inner">
+            <!-- Frente de la tarjeta -->
+            <div class="promo-card front">
+              <div class="promo-badge">🔥 OFERTA</div>
+              <div class="promo-content">
+                <h3 class="promo-title">20% DESCUENTO</h3>
+                <p class="promo-subtitle">En tu primer pedido</p>
+                <p class="promo-code">Código: DULCEAMOR20</p>
+                <a href="#contacto" class="promo-button">Pedir ahora</a>
+              </div>
+              <div class="promo-image">🎂</div>
+            </div>
+            <!-- Reverso de la tarjeta -->
+            <div class="promo-card back">
+              <div class="back-decoration">🎂</div>
+              <div class="back-content">
+                <h4>Endulzamos</h4>
+                <p>tu día especial</p>
+              </div>
+            </div>
           </div>
-          <div class="promo-image">🎂</div>
         </div>
 
-        <div class="promo-card secondary">
-          <div class="promo-badge">🎉 NEW</div>
-          <div class="promo-content">
-            <h3 class="promo-title">Tortas Personalizadas</h3>
-            <p class="promo-subtitle">Diseños únicos para tu evento</p>
-            <p class="promo-description">Desde $80.000</p>
-            <a href="#personalizadas" class="promo-button">Ver modelos</a>
+        <!-- Tarjeta 2: Tortas Personalizadas -->
+        <div class="promo-card-container">
+          <div class="promo-card-inner">
+            <div class="promo-card front secondary">
+              <div class="promo-badge">🎉 NEW</div>
+              <div class="promo-content">
+                <h3 class="promo-title">Tortas Personalizadas</h3>
+                <p class="promo-subtitle">Diseños únicos para tu evento</p>
+                <p class="promo-description">Desde $80.000</p>
+                <a href="#personalizadas" class="promo-button">Ver modelos</a>
+              </div>
+              <div class="promo-image">🧁</div>
+            </div>
+            <div class="promo-card back">
+              <div class="back-decoration">🧁</div>
+              <div class="back-content">
+                <h4>Hecho con amor</h4>
+                <p>para tu celebración</p>
+              </div>
+            </div>
           </div>
-          <div class="promo-image">🧁</div>
         </div>
       </div>
     </section>
@@ -228,7 +263,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1578985545062-69928b1d9587?w=600&h=400&fit=crop"
-              alt="Torta de chocolate"
+              alt="Torta de chocolate decorada con frutas"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Torta de Chocolate</span>
@@ -238,7 +274,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1488477181946-6428a0291777?w=600&h=400&fit=crop"
-              alt="Cupcakes"
+              alt="Cupcakes de colores con frosting"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Cupcakes</span>
@@ -248,7 +285,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1486427944299-d1955d23e34d?w=600&h=400&fit=crop"
-              alt="Cupcakes decorados"
+              alt="Cupcakes decorados con sprinkles"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Cupcakes Decorados</span>
@@ -258,7 +296,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1558301211-0d8c8ddee6ec?w=600&h=400&fit=crop"
-              alt="Donas"
+              alt="Donas glaseadas de colores"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Donas Glaseadas</span>
@@ -268,7 +307,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?w=600&h=400&fit=crop"
-              alt="Galletas"
+              alt="Galletas artesanales con chispas"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Galletas Artesanales</span>
@@ -278,7 +318,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?w=600&h=400&fit=crop"
-              alt="Pancakes"
+              alt="Pancakes con miel y frutas"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Pancakes</span>
@@ -288,7 +329,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1605807646983-377bc5a76493?w=600&h=400&fit=crop"
-              alt="Torta de cumpleaños"
+              alt="Torta de cumpleaños con velas"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Torta de Cumpleaños</span>
@@ -298,7 +340,8 @@
           <div class="gallery-item">
             <img
               src="https://images.unsplash.com/photo-1569864358642-9d1684040f43?w=600&h=400&fit=crop"
-              alt="Macarons"
+              alt="Macarons de colores"
+              loading="lazy"
             />
             <div class="gallery-overlay">
               <span>Macarons</span>
@@ -308,7 +351,7 @@
       </div>
     </section>
 
-    <section class="testimonials" id="testimonios">
+<section class="testimonials" id="testimonios">
       <div class="testimonials-container">
         <div class="testimonials-header">
           <h2 class="testimonials-title">Lo que dicen nuestros clientes</h2>
@@ -317,61 +360,92 @@
           </p>
         </div>
 
-        <div class="testimonials-grid">
-          <div class="testimonial-card">
-            <div class="testimonial-image">
-              <img
-                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=150&h=150&fit=crop"
-                alt="Cliente"
-              />
+        <!-- Carrusel automático de testimonios -->
+        <div class="testimonials-carousel">
+          <div class="carousel-track" id="carousel-track">
+            <!-- Testimonio 1 -->
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="https://images.unsplash.com/photo-1580489944761-15a19d654956?w=150&h=150&fit=crop" alt="Andrea Vargas" />
+              </div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p class="testimonial-text">"La torta de matrimonio quedó increíble. ¡100% recomendado!"</p>
+              <div class="testimonial-author">
+                <h4>Andrea Vargas</h4>
+                <span>Boda - Enero 2026</span>
+              </div>
+              <div class="testimonial-verified"><i class="bi bi-patch-check-fill"></i> Compra verificada</div>
             </div>
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-              "La torta para mi hija fue absolutamente perfecta. Todos quedaron
-              encantados con el sabor y la decoración. ¡Recomendadísimos!"
-            </p>
-            <div class="testimonial-author">
-              <h4>María García</h4>
-              <span>Cumpleaños de Sofia</span>
-            </div>
-          </div>
 
-          <div class="testimonial-card featured">
-            <div class="testimonial-badge">⭐ Destacada</div>
-            <div class="testimonial-image">
-              <img
-                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop"
-                alt="Cliente"
-              />
+            <!-- Testimonio 2 -->
+            <div class="testimonial-card featured">
+              <div class="testimonial-badge">⭐ Más reciente</div>
+              <div class="testimonial-image">
+                <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=150&h=150&fit=crop" alt="Juan Pablo" />
+              </div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p class="testimonial-text">"50 cupcakes para baby shower quedaron hermosos. ¡Volveré a pedir!"</p>
+              <div class="testimonial-author">
+                <h4>Juan Pablo Rodríguez</h4>
+                <span>Baby Shower - Feb 2026</span>
+              </div>
+              <div class="testimonial-verified"><i class="bi bi-patch-check-fill"></i> Compra verificada</div>
             </div>
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-              "Para nuestra boda fueron absolutely Increíbles. La torta de tres
-              pisos quedó divina y los cupcakes para los invitados fueron un
-              éxito total."
-            </p>
-            <div class="testimonial-author">
-              <h4>Carlos & Ana</h4>
-              <span>Boda - Diciembre 2025</span>
-            </div>
-          </div>
 
-          <div class="testimonial-card">
-            <div class="testimonial-image">
-              <img
-                src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop"
-                alt="Cliente"
-              />
+            <!-- Testimonio 3 -->
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=150&h=150&fit=crop" alt="Carolina" />
+              </div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p class="testimonial-text">"Torta de unicornio para mi hija. ¡Excedió mis expectativas!"</p>
+              <div class="testimonial-author">
+                <h4>Carolina Mendoza</h4>
+                <span>Cumpleaños - Sofía</span>
+              </div>
+              <div class="testimonial-verified"><i class="bi bi-patch-check-fill"></i> Compra verificada</div>
             </div>
-            <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
-            <p class="testimonial-text">
-              "Pedí cupcakes para la fiesta de XV años de mi hija y quedaron
-              hermosos. El frosting estaba delicioso y duraron frescas hasta el
-              final."
-            </p>
-            <div class="testimonial-author">
-              <h4>Lucía Mendoza</h4>
-              <span>XV Años - Fernanda</span>
+
+            <!-- Testimonio 4 -->
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=150&h=150&fit=crop" alt="Mariana" />
+              </div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p class="testimonial-text">"Dessert table para XV años quedó espectacular. ¡Gracias!"</p>
+              <div class="testimonial-author">
+                <h4>Mariana Soto</h4>
+                <span>XV Años - Marzo 2026</span>
+              </div>
+              <div class="testimonial-verified"><i class="bi bi-patch-check-fill"></i> Compra verificada</div>
+            </div>
+
+            <!-- Testimonio 5 -->
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=150&h=150&fit=crop" alt="Claudia" />
+              </div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p class="testimonial-text">"3 años pidiendo tartas. Siempre deliciosas. ¡Mejor atención!"</p>
+              <div class="testimonial-author">
+                <h4>Claudia López</h4>
+                <span>Cliente frecuente</span>
+              </div>
+              <div class="testimonial-verified"><i class="bi bi-patch-check-fill"></i> Compra verificada</div>
+            </div>
+
+            <!-- Testimonio 6 -->
+            <div class="testimonial-card">
+              <div class="testimonial-image">
+                <img src="https://images.unsplash.com/photo-1519085360753-af0119f7cbe7?w=150&h=150&fit=crop" alt="Ricardo" />
+              </div>
+              <div class="testimonial-stars">⭐⭐⭐⭐⭐</div>
+              <p class="testimonial-text">"Torta de aniversario quedó perfecta. ¡Volveremos!"</p>
+              <div class="testimonial-author">
+                <h4>Ricardo Peña</h4>
+                <span>Aniversario - Feb 2026</span>
+              </div>
+              <div class="testimonial-verified"><i class="bi bi-patch-check-fill"></i> Compra verificada</div>
             </div>
           </div>
         </div>
@@ -592,108 +666,23 @@
     
     <div class="contact-form-wrapper">
       <form class="contact-form">
-        <input type="text" class="form-input" placeholder="Tu nombre" required>
-        <input type="tel" class="form-input" placeholder="Tu teléfono" required>
-        <input type="email" class="form-input" placeholder="Tu email" required>
-        <textarea class="form-textarea" placeholder="¿Qué necesitas? (torta, cupcakes, evento especial...)" rows="4" required></textarea>
+        <!-- Label oculto visualmente pero disponible para lectores de pantalla -->
+        <label for="nombre" class="visually-hidden">Tu nombre</label>
+        <input type="text" id="nombre" class="form-input" placeholder="Tu nombre" required>
+        
+        <label for="telefono" class="visually-hidden">Tu teléfono</label>
+        <input type="tel" id="telefono" class="form-input" placeholder="Tu teléfono" required>
+        
+        <label for="email" class="visually-hidden">Tu email</label>
+        <input type="email" id="email" class="form-input" placeholder="Tu email" required>
+        
+        <label for="mensaje" class="visually-hidden">¿Qué necesitas?</label>
+        <textarea id="mensaje" class="form-textarea" placeholder="¿Qué necesitas? (torta, cupcakes, evento especial...)" rows="4" required></textarea>
+        
         <button type="submit" class="form-button">Enviar mensaje</button>
       </form>
     </div>
   </div>
 </section>
-    <!-- BOOTSTRAP ICONS -->
-    <link
-      rel="stylesheet"
-      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
-    />
-
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- BRAND -->
-        <div class="footer-brand">
-          <div class="footer-logo">
-            <div class="footer-logo-icon">
-              <i class="bi bi-cake2-fill"></i>
-            </div>
-
-            <div>
-              <h3>Dulce Amor</h3>
-              <span>Repostería Karen</span>
-            </div>
-          </div>
-
-          <p>
-            Creando momentos dulces y memorables con cada detalle y cada sabor.
-          </p>
-
-          <p class="footer-tagline">Endulzamos tus momentos especiales ✨</p>
-        </div>
-
-        <!-- LINKS -->
-        <div class="footer-section">
-          <h4>Enlaces</h4>
-
-          <ul class="footer-links">
-            <li><a href="#inicio">Inicio</a></li>
-            <li><a href="#productos">Productos</a></li>
-            <li><a href="#galeria">Galería</a></li>
-            <li><a href="#contacto">Contacto</a></li>
-          </ul>
-        </div>
-
-        <!-- CONTACT -->
-        <div class="footer-section">
-          <h4>Contacto</h4>
-
-          <div class="footer-contact">
-            <p>
-              <i class="bi bi-telephone-fill"></i>
-              +573006194301
-            </p>
-
-            <p>
-              <i class="bi bi-envelope-fill"></i>
-              dulciamorkaren@gmail.com
-            </p>
-          </div>
-        </div>
-
-        <!-- SOCIAL -->
-        <div class="footer-section">
-          <h4>Síguenos</h4>
-
-          <div class="social-icons">
-            <a
-              href="https://www.instagram.com/karens_cake_shop?igsh=MTE1emZhOHY5aHpueQ%3D%3D"
-              target="_blank"
-              class="social-link instagram"
-            >
-              <i class="bi bi-instagram"></i>
-            </a>
-
-            <a
-              href="https://facebook.com/dulceamorkaren"
-              target="_blank"
-              class="social-link facebook"
-            >
-              <i class="bi bi-facebook"></i>
-            </a>
-
-            <a
-              href="https://tiktok.com/@dulceamorkaren"
-              target="_blank"
-              class="social-link tiktok"
-            >
-              <i class="bi bi-tiktok"></i>
-            </a>
-          </div>
-        </div>
-      </div>
-
-      <!-- BOTTOM -->
-      <div class="footer-bottom">
-        <p>© 2026 Repostería Karen • Todos los derechos reservados</p>
-      </div>
-    </footer>
   </body>
 </html>
