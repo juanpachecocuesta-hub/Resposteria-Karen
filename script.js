@@ -323,3 +323,89 @@ if (footerBottom) {
     const currentYear = new Date().getFullYear();
     footerBottom.textContent = `© ${currentYear} Repostería Karen • Todos los derechos reservados`;
 }
+
+
+// ============================================
+// 11. FOOTER DINÁMICO (Evita código duplicado)
+// ============================================
+// Genera el footer automáticamente para todas las páginas
+
+function crearFooter() {
+    // Verificar si ya existe el footer
+    if (document.querySelector('.footer')) return;
+
+    // Crear el elemento footer
+    const footer = document.createElement('footer');
+    footer.className = 'footer';
+    
+    footer.innerHTML = `
+        <div class="footer-container">
+            <!-- BRAND -->
+            <div class="footer-brand">
+                <div class="footer-logo">
+                    <div class="footer-logo-icon">
+                        <i class="bi bi-cake2-fill"></i>
+                    </div>
+                    <div>
+                        <h3>Dulce Amor</h3>
+                        <span>Repostería Karen</span>
+                    </div>
+                </div>
+                <p>Creando momentos dulces y memorables con cada detalle y cada sabor.</p>
+                <p class="footer-tagline">Endulzamos tus momentos especiales ✨</p>
+            </div>
+
+            <!-- LINKS -->
+            <div class="footer-section">
+                <h4>Enlaces</h4>
+                <ul class="footer-links">
+                    <li><a href="index.html">Inicio</a></li>
+                    <li><a href="index.html#productos">Productos</a></li>
+                    <li><a href="servicios.html">Servicios</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                </ul>
+            </div>
+
+            <!-- CONTACT -->
+            <div class="footer-section">
+                <h4>Contacto</h4>
+                <div class="footer-contact">
+                    <p>
+                        <i class="bi bi-telephone-fill"></i>
+                        +573006194301
+                    </p>
+                    <p>
+                        <i class="bi bi-envelope-fill"></i>
+                        dulciamorkaren@gmail.com
+                    </p>
+                </div>
+            </div>
+
+            <!-- SOCIAL -->
+            <div class="footer-section">
+                <h4>Síguenos</h4>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/karens_cake_shop?igsh=MTE1emZhOHY5aHpueQ%3D%3D" target="_blank" class="social-link instagram">
+                        <i class="bi bi-instagram"></i>
+                    </a>
+                    <a href="https://facebook.com/dulceamorkaren" target="_blank" class="social-link facebook">
+                        <i class="bi bi-facebook"></i>
+                    </a>
+                    <a href="https://tiktok.com/@dulceamorkaren" target="_blank" class="social-link tiktok">
+                        <i class="bi bi-tiktok"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- BOTTOM -->
+        <div class="footer-bottom">
+            <p>© 2026 Repostería Karen • Todos los derechos reservados</p>
+        </div>
+    `;
+
+    // Insertar el footer al final del body
+    document.body.appendChild(footer);
+}
+
+// Ejecutar la función para crear el footer
+crearFooter();
