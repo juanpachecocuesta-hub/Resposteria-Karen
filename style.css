@@ -1203,6 +1203,8 @@ img {
   background: #25d366;
 }
 
+
+
 .contact-option.whatsapp:hover .contact-text p,
 .contact-option.whatsapp:hover .contact-text h4 {
   color: #fff;
@@ -1468,7 +1470,7 @@ img {
 /* COLORES */
 
 .whatsapp {
-  background: linear-gradient(135deg, #25d366, #1ebe5d);
+  background:#fff;
   box-shadow: 0 10px 20px rgba(37, 211, 102, 0.25);
 }
 
@@ -2021,6 +2023,7 @@ html {
   .contact-options {
     flex-direction: row;
     flex-wrap: wrap;
+    background-color: #fff;
   }
 
   .contact-option {
@@ -2240,7 +2243,6 @@ html {
     justify-content: center;
   }
 }
-
 
 /* =========================================
    FIXES RESPONSIVE MOBILE
