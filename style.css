@@ -1194,6 +1194,118 @@ img {
   color: gold;
 }
 
+/* Etiqueta de compra verificada */
+.testimonial-verified {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 11px;
+  color: #28a745;
+  background: #e8f5e9;
+  padding: 4px 10px;
+  border-radius: 12px;
+  margin-top: 10px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.testimonial-verified i {
+  font-size: 12px;
+}
+
+/* ============================================
+   SLIDER DE TESTIMONIOS
+   ============================================ */
+
+.testimonials-slider {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 0 10px;
+}
+
+.testimonials-track {
+  display: flex;
+  gap: 25px;
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+  padding: 20px 0;
+  width: 100%;
+}
+
+.testimonials-track .testimonial-card {
+  min-width: calc(33.333% - 17px);
+  max-width: calc(33.333% - 17px);
+  flex-shrink: 0;
+}
+
+/* Botones de navegación del slider */
+.slider-btn-testimonial {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: white;
+  border: 2px solid var(--soft-rose);
+  color: var(--primary-pink);
+  font-size: 20px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  flex-shrink: 0;
+  z-index: 10;
+}
+
+.slider-btn-testimonial:hover {
+  background: var(--primary-pink);
+  color: white;
+  border-color: var(--primary-pink);
+  transform: scale(1.1);
+}
+
+/* Puntos indicadores del slider */
+.testimonials-dots {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin-top: 30px;
+}
+
+.testimonial-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--soft-rose);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.testimonial-dot.active,
+.testimonial-dot:hover {
+  background: var(--primary-pink);
+  transform: scale(1.2);
+}
+
+/* Responsive del slider */
+@media (max-width: 1024px) {
+  .testimonials-track .testimonial-card {
+    min-width: calc(50% - 13px);
+    max-width: calc(50% - 13px);
+  }
+}
+
+@media (max-width: 768px) {
+  .testimonials-track .testimonial-card {
+    min-width: 100%;
+    max-width: 100%;
+  }
+  
+  .slider-btn-testimonial {
+    display: none;
+  }
+}
+
 /* Galería */
 .gallery {
   padding: 80px 20px;

@@ -706,3 +706,86 @@ function responder(tipo) {
 
 // Inicializar el chat cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', crearChat);
+
+
+// ============================================
+// 13. SLIDER DE TESTIMONIOS
+// ============================================
+// Carrusel automático de testimonios con navegación
+
+let currentTestimonial = 0;
+const track = document.getElementById('testimonials-track');
+const cards = document.querySelectorAll('.testimonial-card');
+const cardsPerView = 3;
+let totalTestimonials = cards.length;
+
+// Crear puntos indicadores
+function crearDotsTestimonios() {
+    const dotsContainer = document.getElementById('testimonials-dots');
+    if (!dotsContainer) return;
+
+    const totalDots = Math.ceil(totalTestimonials / cardsPerView);
+    
+    for (let i = 0; i < totalDots; i++) {
+        const dot = document.createElement('span');
+        dot.className = 'testimonial-dot' + (i === 0 ? ' active' : '');
+        dot.onclick = () => irATestimonial(i);
+        dotsContainer.appendChild(dot);
+    }
+}
+
+// Función para mover el slider
+function moverTestimonial(direccion) {
+    const maxSlide = Math.ceil(totalTestimonials / cardsPerView) - 1;
+    
+    currentTestimonial += direccion;
+    
+    if (currentTestimonial < 0) currentTestimonial = 0;
+    if (currentTestimonial > maxSlide) currentTestimonial = maxSlide;
+    
+    const moveAmount = currentTestimonial * (100 / cardsPerView);
+    if (track) {
+        track.style.transform = `translateX(-${moveAmount}%)`;
+    }
+    
+    actualizarDotsTestimonios();
+}
+
+// Función para ir a un slide específico
+function irATestimonial(slide) {
+    currentTestimonial = slide;
+    const moveAmount = currentTestimonial * (100 / cardsPerView);
+    if (track) {
+        track.style.transform = `translateX(-${moveAmount}%)`;
+    }
+    actualizarDotsTestimonios();
+}
+
+// Actualizar los puntos activos
+function actualizarDotsTestimonios() {
+    const dots = document.querySelectorAll('.testimonial-dot');
+    const activeDot = Math.floor(currentTestimonial);
+    
+    dots.forEach((dot, index) => {
+        dot.classList.toggle('active', index === activeDot);
+    });
+}
+
+// Auto-mover testimonios cada 5 segundos
+function iniciarAutoSlide() {
+    setInterval(() => {
+        const maxSlide = Math.ceil(totalTestimonials / cardsPerView) - 1;
+        if (currentTestimonial < maxSlide) {
+            moverTestimonial(1);
+        } else {
+            currentTestimonial = -1;
+            moverTestimonial(1);
+        }
+    }, 5000);
+}
+
+// Inicializar slider de testimonios
+if (document.getElementById('testimonials-track')) {
+    crearDotsTestimonios();
+    iniciarAutoSlide();
+}
