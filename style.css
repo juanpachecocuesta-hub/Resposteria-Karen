@@ -1243,6 +1243,11 @@ img {
   }
 }
 
+/* Velocidad más lenta - 40 segundos por ciclo */
+.carousel-track {
+  animation: scroll-left 40s linear infinite;
+}
+
 /* Estilo de cada card en el carrusel */
 .carousel-track .testimonial-card {
   width: 350px;
